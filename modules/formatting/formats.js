@@ -17,3 +17,24 @@ export const formatBytes =(bytes, decimals = 2)=>{
   
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 }
+/**
+ * Formats a decimals number or text to the specified number
+ * of decimal places using the specified locale/culture.
+ * 
+ * @param {String|Number} val 
+ * @param {Number} decimals Number of decimal places. Defaults to 2.
+ * @param {String|String[]} locale Localization or culture info. Defaults to 'en-US'
+ * @returns {Number}
+ */
+export const formatDecimals = (val, decimals = 2, locale = 'en-US') => {
+    val = val === undefined ? 0 : parseFloat(val);
+    if (isNaN(val)) {
+      return 0;
+    } else {
+      var formatter = new Intl.NumberFormat(locale, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      });
+      return formatter.format(val);
+    }
+  };
