@@ -39,6 +39,13 @@ export const formatDecimals = (val, decimals = 2, locale = 'en-US') => {
     }
   };
 
+  export const truncate = (val, count) => {
+    if (!val) return "-.-";
+    if (!count) return val;
+    if (val.length <= count) return val;
+    return val.substr(0, count) + "..";
+  }
+
   export const maskPhoneNumber = (ph) => {
     if (!ph) return "";
     const max = 7;
