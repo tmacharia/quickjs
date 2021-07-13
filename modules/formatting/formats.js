@@ -60,3 +60,12 @@ export const formatDecimals = (val, decimals = 2, locale = 'en-US') => {
     }
     return ph;
   }
+
+  export const getNameInitials = (val, limit = 2) => {
+    if (!val) return "-";
+    var initials = val
+      .replace(/[^a-zA-Z- ]/g, "")
+      .match(/\b\w/g)
+      .splice(0, limit);
+    return initials.join(".");
+  }
