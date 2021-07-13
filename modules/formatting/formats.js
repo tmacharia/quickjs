@@ -38,3 +38,18 @@ export const formatDecimals = (val, decimals = 2, locale = 'en-US') => {
       return formatter.format(val);
     }
   };
+
+  export const maskPhoneNumber = (ph) => {
+    if (!ph) return "";
+    const max = 7;
+    if (ph.length >= max) {
+      let k = 3;
+      let arr = ph.split("");
+      while (k < max) {
+        arr[k] = "*";
+        k++;
+      }
+      ph = arr.join("");
+    }
+    return ph;
+  }
