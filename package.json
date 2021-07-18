@@ -1,0 +1,25 @@
+{
+  "name": "quickjs",
+  "version": "1.0.0",
+  "description": "Mini sized Javascript modules &amp; functions for reuse across projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmacharia/quickjs.git"
+  },
+  "author": "txmacharia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmacharia/quickjs/issues"
+  },
+  "homepage": "https://github.com/tmacharia/quickjs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6"
+  }
+}

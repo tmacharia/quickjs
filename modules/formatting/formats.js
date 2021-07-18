@@ -24,7 +24,7 @@ export const formatBytes =(bytes, decimals = 2)=>{
  * @param {String|Number} val 
  * @param {Number} decimals Number of decimal places. Defaults to 2.
  * @param {String|String[]} locale Localization or culture info. Defaults to 'en-US'
- * @returns {Number}
+ * @returns {String}
  */
 export const formatDecimals = (val, decimals = 2, locale = 'en-US') => {
     val = val === undefined ? 0 : parseFloat(val);
@@ -39,33 +39,18 @@ export const formatDecimals = (val, decimals = 2, locale = 'en-US') => {
     }
   };
 
-  export const truncate = (val, count) => {
+export const truncate = (val, count) => {
     if (!val) return "-.-";
     if (!count) return val;
     if (val.length <= count) return val;
     return val.substr(0, count) + "..";
   }
 
-  export const maskPhoneNumber = (ph) => {
-    if (!ph) return "";
-    const max = 7;
-    if (ph.length >= max) {
-      let k = 3;
-      let arr = ph.split("");
-      while (k < max) {
-        arr[k] = "*";
-        k++;
-      }
-      ph = arr.join("");
-    }
-    return ph;
-  }
-
-  export const getNameInitials = (val, limit = 2) => {
+export const getNameInitials = (val, limit = 2) => {
     if (!val) return "-";
     var initials = val
       .replace(/[^a-zA-Z- ]/g, "")
       .match(/\b\w/g)
       .splice(0, limit);
-    return initials.join(".");
+    return initials.join(".").toUpperCase()
   }
